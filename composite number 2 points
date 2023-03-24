@@ -1,0 +1,31 @@
+public class CompositeNumbersInRange {
+    public static void main(String[] args) {
+        int a = 10; // starting point
+        int b = 30; // ending point
+
+        // iterate through the range of numbers
+        for (int i = a; i <= b; i++) {
+            // check if the number is composite
+            if (isComposite(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    // function to check if a number is composite
+    public static boolean isComposite(int n) {
+        // 1 is not a composite number
+        if (n == 1) {
+            return false;
+        }
+
+        // check if the number has any factors other than 1 and itself
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
